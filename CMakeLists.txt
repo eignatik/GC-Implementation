@@ -3,5 +3,5 @@ project(garbagecollector)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(SOURCE_FILES main.cpp util/PropertiesUtil.cpp util/PropertiesUtil.h util/Logger.cpp util/Logger.h)
+set(SOURCE_FILES main/main.cpp main/util/PropertiesUtil.cpp main/util/PropertiesUtil.h main/util/Logger.cpp main/util/Logger.h)
 add_executable(garbagecollector ${SOURCE_FILES})

@@ -34,6 +34,10 @@ string PropertiesUtil::getProperty(string &propertyName) {
  */
 void PropertiesUtil::setPropertiesFromFile(string filePath) {
     ifstream propertiesFile(filePath);
+    if (!propertiesFile.is_open()) {
+        Logger::error("The file with path " + filePath + " doesn't exist or wasn't opened\n", __FILE__, __LINE__);
+        return;
+    }
     string props = string((istreambuf_iterator<char>(propertiesFile)), istreambuf_iterator<char>());
     Logger::info("The following properties have been received\n", props, __FILE__, __LINE__);
     vector<string> propertiesKeys = getPropertiesVector(props);
