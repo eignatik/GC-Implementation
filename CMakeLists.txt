@@ -39,5 +39,5 @@ endif()
 #target_link_libraries(example gtest_main)
 #add_test(NAME example_test COMMAND example)
 
-set(SOURCE_FILES main/main.cpp main/util/PropertiesUtil.cpp main/util/PropertiesUtil.h main/util/Logger.cpp main/util/Logger.h test/util/PropertiesUtilTest.cpp test/util/PropertiesUtilTest.h test/TestRunner.cpp)
+set(SOURCE_FILES main/main.cpp main/util/PropertiesUtil.cpp main/util/PropertiesUtil.h main/util/Logger.cpp main/util/Logger.h test/util/PropertiesUtilTest.cc test/gctest_main.cpp)
 add_executable(garbagecollector ${SOURCE_FILES})
