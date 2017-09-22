@@ -1,6 +1,7 @@
 #include <iostream>
 #include <thread>
 #include "util/PropertiesUtil.h"
+#include "gc/GC.h"
 
 using namespace std;
 
@@ -9,14 +10,8 @@ void thread_function() {
 }
 
 int main() {
-    string edenSize = string("eden.size");
-    string survivorSize = string("survivor.size");
-    string oldSize = string("old.size");
-    PropertiesUtil util = PropertiesUtil();
-    cout << util.getProperty(edenSize);
-    cout << util.getProperty(survivorSize);
-    cout << util.getProperty(oldSize);
-
+    GC gc = GC();
+    gc.init();
 //    thread t(&thread_function);   // t starts running
 //    cout << "main thread\n";
 //    t.join();   // main thread waits for the thread t to finish
